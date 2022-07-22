@@ -36,7 +36,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Build coverage file
       run: |
-        pytest --cache-clear --cov=parent/proj parent/test/ >pytest-coverage.txt
+        pytest --cache-clear parent/test/ >pytest-coverage.txt
     - name: pytest-coverage-commentators
       uses: coroo/pytest-coverage-commentator@v1.0.2
       with: 
