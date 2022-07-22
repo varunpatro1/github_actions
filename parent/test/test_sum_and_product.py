@@ -8,10 +8,7 @@ def test_get_sum():
 def test_get_product():
     assert(get_product(4,5) == 20)
 
-def main():
-    print(get_sum(4,5))
 
-main()
 
 
 
