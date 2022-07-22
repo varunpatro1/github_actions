@@ -11,8 +11,9 @@ def get_product(x,y):
     """
     Given two values, returns product
     """
-    
+
     return x*y
+
 
 
 
