@@ -2,6 +2,7 @@
 import sys
 import os
 sys.path.append('/Users/varunpatro/Desktop/github_actions_test')
+
 from sum_and_product import *
 
 def test_get_sum():
