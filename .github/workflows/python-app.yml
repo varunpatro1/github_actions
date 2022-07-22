@@ -36,8 +36,10 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Build coverage file
       run: |
-        pytest --cache-clear parent/test/ >pytest-coverage.txt
-    - name: pytest-coverage-commentators
-      uses: coroo/pytest-coverage-commentator@v1.0.2
-      with: 
-        pytest-coverage: pytest-coverage.txt
+        pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=github_actions_test test/ | tee pytest-coverage.txt
+
+    - name: Pytest coverage comment
+      uses: MishaKav/pytest-coverage-comment@main
+      with:
+        pytest-coverage-path: ./pytest-coverage.txt
+        junitxml-path: ./pytest.xml
